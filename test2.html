@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #test {
+            width: 200px;
+        }
+    </style>
     <script>
-        var b = 1;
-        alert(typeof b);
+        window.onload = function () {
+            var oDiv = document.getElementById("test");
+
+            function showTime() {
+                var oTime = new Date();
+                oDiv.innerHTML=oTime.getHours() + " : " + oTime.getMinutes() + " : " + oTime.getSeconds();
+            }
+
+            setInterval(showTime, 1000);
+            showTime();
+        }
     </script>
 </head>
 <body>
-
+<div id="test"></div>
 </body>
 </html>

@@ -1,11 +1,30 @@
 <!DOCTYPE  html>
 <html  lang="zh-cn">
 <head>
+<link  rel="stylesheet" href="cssv1.css" type="text/css">
 <meta charset="utf-8">
 <title>陶田</title>
+<script>
+    function getDou() {
+        return arguments[0]<10?'0'+arguments[0]:arguments[0];
+    }
+
+    window.onload = function () {
+        var oDiv = document.getElementById("currentTime");
+
+        function showTime() {
+            var oTime = new Date();
+            oDiv.innerHTML=getDou(oTime.getHours()) + " : " + getDou(oTime.getMinutes()) + " : " + getDou(oTime.getSeconds());
+        }
+
+        setInterval(showTime, 1000);
+        showTime();
+    }
+</script>
 </head>
 <body>
-陶雪锋的试验<br/>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=65766&auto=1&height=66"></iframe>
+<div id = "title">陶雪锋的试验田<br/></div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=65766&auto=0&height=66"></iframe>
+<div id = "currentTime"></div>
 </body>
 </html>
